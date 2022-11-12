@@ -8,11 +8,12 @@ ul, li {
 }
 
 body {
-  background-image: url('https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg');
+  background-color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-nav {
