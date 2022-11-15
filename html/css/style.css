@@ -59,12 +59,7 @@ a {
      transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
      letter-spacing: 0;
      font-weight: normal;
      position: relative;
@@ -99,20 +94,13 @@ h6 {
      font-size: 13px
 }
 
-*,
-*::after,
-*::before {
+*, *::after, *::before {
      -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
      box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
      color: #212121;
      text-decoration: none!important;
      opacity: 1
@@ -122,9 +110,7 @@ button:focus {
      outline: none;
 }
 
-ul,
-li,
-ol {
+ul, li, ol {
      margin: 0px;
      padding: 0px;
      list-style: none;
@@ -143,8 +129,7 @@ a {
      outline: none !important;
 }
 
-a,
-.btn {
+a, .btn {
      text-decoration: none !important;
      outline: none !important;
      -webkit-transition: all .3s ease-in-out;
@@ -159,7 +144,7 @@ img {
      height: auto;
 }
 
- :focus {
+:focus {
      outline: 0;
 }
 
@@ -291,6 +276,7 @@ button {
     width: 25%;
     float: left;
 }
+
 .banner_section {
     width: 100%;
     float: left;
@@ -300,12 +286,14 @@ button {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
 .icon_1{
     width: 100%;
     float: left;
     text-align: center;
 }
-.furniture_text{
+
+.m_text{
     width: 100%;
     float: left;
     font-size: 100px;
@@ -385,7 +373,7 @@ button {
     float: left;
     padding-bottom: 90px;
 }
-.services_taital{
+.services_title{
     width: 100%;
     float: left;
     font-size: 36px;
@@ -393,7 +381,7 @@ button {
     text-align: center;
     text-transform: uppercase;
 }
-.many_taital{
+.many_title{
     width: 100%;
     float: left;
     font-size: 16px;
@@ -406,7 +394,7 @@ button {
     width: 100%;
     float: left;
 }
-.furnitures_text {
+.types_text {
     width: 100%;
     float: left;
     font-size: 24px;
@@ -415,12 +403,20 @@ button {
     text-align: center;
     padding-top: 20px;
 }
-.dummy_text{
+.types_subtext{
     width: 100%;
     float: left;
     font-size: 16px;
     color: #090808;
     text-align: center;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+.types_subtext1{
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #69695D;
     margin-left: 0px;
     margin-top: 10px;
 }
@@ -470,7 +466,7 @@ button {
     text-transform: uppercase;
     font-weight: 500;
 }
-.lorem_text {
+.about_subtext {
     width: 100%;
     float: left;
     font-size: 16px;
@@ -498,7 +494,7 @@ button {
     color: #000;
     background-color: #ffffff;
 }
-.furnitures_section {
+.our_section {
     width: 100%;
     float: left;
     padding-bottom: 90px;
@@ -511,7 +507,7 @@ button {
     text-transform: uppercase;
     text-align: center;
 }
-.ipsum_text{
+.sub_text{
     width: 100%;
     float: left;
     font-size: 16px;
@@ -520,7 +516,7 @@ button {
     margin-left: 0px;
     margin-top: 10px;
 }
-.furnitures_section2{
+.our_section2{
     width: 100%;
     float: left;
 }
@@ -584,7 +580,7 @@ a:hover {
     font-weight: bold;
     padding-top: 35px;
 }
-.dololr_text{
+.eq_text{
     width: 100%;
     float: left;
     font-size: 18px;
@@ -600,7 +596,7 @@ a:hover {
     padding-bottom: 55px;
     background-size: 100%;
 }
-.who_taital{
+.who_title{
     width: 100%;
     float: left;
     font-size: 36px;
@@ -617,7 +613,7 @@ a:hover {
     text-align: center;
     text-transform: uppercase;
 }
-.lorem_ipsum_text{
+.test_text{
     width: 100%;
     float: left;
     font-size: 16px;
@@ -790,14 +786,14 @@ a:hover {
     bottom: 35px;
 }
 
-.loksans_text{
+.client_name{
     width: 100%;
     float: left;
     font-size: 20px; 
     color: #191919;
     text-transform: uppercase;
 }
-.dolor_ipsum_text{
+.client_comment{
     width: 100%;
     float: left;
     font-size: 16px; 
@@ -953,7 +949,7 @@ textarea#comment::placeholder {
     height: auto;
     padding-bottom: 90px;
 }
-.fooer_logo {
+.footer_logo {
     width: 100%;
     float: left;
     padding-bottom: 40px;
@@ -966,14 +962,14 @@ textarea#comment::placeholder {
     text-transform: uppercase;
 }
 
-.footer_lorem_text{
+.footer_text{
     width: 80%;
     float: left;
     font-size: 16px;
     color: #fefefe;
     margin-left: 0px;
 }
-.footer_lorem_text1{
+.footer_text1{
     width: 100%;
     float: left;
     font-size: 16px;
