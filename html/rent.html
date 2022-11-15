@@ -57,6 +57,13 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+select{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 
 label {
   margin-bottom: 10px;
@@ -97,6 +104,13 @@ span.price {
   float: right;
   color: grey;
 }
+body {
+  background-image: url(https://miningconstruction-sadc.com/wp-content/uploads/2020/11/Construction-Equipment.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
@@ -108,11 +122,13 @@ span.price {
   }
 }
 </style>
+
 </head>
 <body>
+  <div class="logo" style="margin-left: 10px;margin-top:10px;" ><a href="index.html"><img src="images/logo.png" ></a></div>
 
-<h2>Shine Machinery</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In enim harum omnis quod minus ab eos placeat, explicabo blanditiis cumque numquam odit expedita animi, molestias quisquam voluptatum excepturi amet et..</p>
+  <h2>We make it fast and easy to book your rental</h2>
+  
 
 <div class="row">
   <div class="col-75">
@@ -122,30 +138,33 @@ span.price {
         <div class="row">
           <div class="col-50">
             <h3>Rental Details</h3>
-            <label for="fname"><i class="fa fa-user"></i> Machine Type</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-            <label for="email"><i class="fa fa-envelope"></i> Brand</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Expected delivery date</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
-
+            <p>(*Required)</p>
+            <label for="machine">Machine Type*</label>
+            <select id="machine" name="machine">
+              <option value="none"> </option>
+              <option value="boom">Boom Lifts</option>
+              <option value="dozer">Bulldozer</option>
+              <option value="crane">Crane</option>
+              <option value="exc">Excavator</option>
+              <option value="forklift">Forklift</option>
+              <option value="scissor">Scissor Lifts</option>
+              <option value="steerloader">Steer Loader</option>
+            </select>
+            <label for="adr">Jobsite Location*</label>
+            <input type="text" id="adr" name="address">
+            
             <div class="row">
               <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
+                <label for="startdate">Rental Start Date*</label>
+                <input type="text" id="startdate" name="startdate">
               </div>
               <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <label for="enddate">Rental End Date</label>
+                <input type="text" id="enddate" name="enddate">
               </div>
             </div>
           </div>         
         </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
         <input type="submit" value="Continue to checkout" class="btn">
       </form>
     </div>
