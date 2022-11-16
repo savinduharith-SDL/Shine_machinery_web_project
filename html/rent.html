@@ -136,7 +136,7 @@
       <div class="container">
 
         <!-- Rent section start -->
-        <form action="/action_page.php">
+        <form name="rentform" action="/action_page.php" method="post">
           <div class="row">
             <div class="col-50">
               <h3>Rental Details</h3>
@@ -160,11 +160,11 @@
               <div class="row">
                 <div class="col-50">
                   <label for="startdate">Rental Start Date*</label>
-                  <input type="text" id="startdate" name="startdate">
+                  <input type="date" id="startdate" name="startdate">
                 </div>
                 <div class="col-50">
                   <label for="enddate">Rental End Date</label>
-                  <input type="text" id="enddate" name="enddate">
+                  <input type="date" id="enddate" name="enddate">
                 </div>
               </div>
             </div>         
