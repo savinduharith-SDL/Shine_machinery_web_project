@@ -1,4 +1,4 @@
-function loginValidate(){  
+function rentValidate(){  
   var type=document.rentform.machine.selectedIndex;  
   var jobsite=document.rentform.address.value;
   var startdate=document.rentform.startdate.value;

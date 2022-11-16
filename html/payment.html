@@ -129,13 +129,13 @@
       <div class="container">
 
         <!-- form section start -->
-        <form action="/action_page.php">
+        <form name="paymentform" method="post" onsubmit="return paymentValidate()">
           <div class="row">
             <!-- Bill section start -->
             <div class="col-50">
               <h3>Billing Address</h3>
-              <label for="fname">Full Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Enter Full Name">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Enter Full Name">
               <label for="email">Email</label>
               <input type="text" id="email" name="email" placeholder="abc@example.com">
               <label for="adr">Address</label>
@@ -167,12 +167,10 @@
               <input type="text" id="cname" name="cardname" placeholder="Name on card">
               <label for="ccnum">Credit card number</label>
               <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-              <label for="expmonth">Exp Month</label>
-              <input type="month" id="expmonth" name="expmonth" placeholder="September">
               <div class="row">
                 <div class="col-50">
-                  <label for="expyear">Exp Year</label>
-                  <input type="text" id="expyear" name="expyear" placeholder="2022">
+                  <label for="expmonth">Exp date</label>
+                  <input type="month" id="expmonth" name="expdate" placeholder="September">
                 </div>
                 <div class="col-50">
                   <label for="cvv">CVV</label>
@@ -190,6 +188,8 @@
     </div>
    
   </div>
+
+  <script type="text/javascript" src="./payment-validation.js"></script>
 
 </body>
 </html>
