@@ -25,39 +25,50 @@ background-repeat: no-repeat;">
           	
 
 	 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	 	$name = $_POST['signup_username'];
-	 	$email = $_POST['signup_email'];
-	 	$user_password = $_POST['signup_password'];
+	 	$name = $_POST['signin_username'];
+	 	$user_password = $_POST['signin-password'];
 
 	 
 	 }
-	  $sql="SELECT user_name FROM customer WHERE user_name='$name' LIMIT 1" ;
+	  $sql="SELECT user_name,password FROM customer WHERE user_name='$name'" ;
 	  $result=mysqli_query($conn, $sql);
 
-	  if(mysqli_num_rows($result) == 0){
-	  	//$insert = "INSERT INTO customer VALUES(".$name.",".$email.",".$password.")"
-	  	$insert = "INSERT INTO `customer` VALUES('$name','$email','$user_password')";
-	  		if(mysqli_query($conn,$insert)){
-	  			echo "New record added sucessfully";
-	  			header("Location: /html/login.php");
-	  			exit();
-	  	}
-	  		else{
-	  			echo "error 404";
-	  		}
+	  if(mysqli_num_rows($result) > 0){
+        while($row=mysqli_fetch_assoc($result)) {
+            if($row['user_name'] == $name)
+            {
+                if($row['password'] == $user_password)
+                {
+                    echo "<script>
+	  			    function redirect(){
+	  				 window.alert('Login successful');
+	  				 location.href='/html/index.html';
+	  			    } 
+	  			    redirect();
+	  			    </script>";
+	  		
+                }else{
+                    echo "<script>
+	  			    function redirect(){
+	  				 window.alert('User Name or password incorrect!');
+	  				 location.href='/html/login.php';
+	  			    } 
+	  			    redirect();
+	  			    </script>";
+                }
+            }
+        }
 }
 	  else{
-	  	//header("Location: /html/login.php");
 	  	echo "<script>
 	  			function redirect(){
-	  				 window.alert('User already exsists!');
+	  				 window.alert('User does not exsist!');
 	  				 location.href='/html/login.php';
 	  			} 
 	  			redirect();
 	  			</script>";
 	  		
 	  }
-	  //setTimeout(header('Location: /html/login.php'),3000);
 
 
 ?>

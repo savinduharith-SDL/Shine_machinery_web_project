@@ -41,16 +41,15 @@ background-size: 100% 100%;
 </ul>
 
 <div id="login">
-<form class="form">
+<form class="form" method="POST" action="signin.php">
 <p class="fieldset">
-<label class="image-replace email" for="signin-email">E-mail</label>
-<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-<span class="error-message">An account with this email address does not exist!</span>
+<label class="image-replace username" for="signin-username" >Username</label>
+<input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="Username" name="signin_username">
+<span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
 </p>
-
 <p class="fieldset">
 <label class="image-replace password" for="signin-password">Password</label>
-<input class="full-width has-padding has-border" id="signin-password" type="password" placeholder="Password">
+<input class="full-width has-padding has-border" id="signin-password" type="password" placeholder="Password" name="signin-password">
 <a href="#0" class="hide-password">Show</a>
 <span class="error-message">Wrong password! Try again.</span>
 </p>
