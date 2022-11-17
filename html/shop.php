@@ -61,7 +61,7 @@
                   <div class="search_icon">
                      <ul>
                         <!--<li><a href="#"><img src="images/search-icon.png"></a></li>-->
-                        <li><a href="login.html">LOGIN</a></li>
+                        <li><a href="login.php">LOGIN</a></li>
                      </ul>
                   </div>
                </div>
@@ -159,7 +159,7 @@
                         }
                      }
 
-
+                     mysqli_close($conn);
                      ?>
                      <h2 class="types_text">Heavy Machinery </h2>
                      <p class="types_subtext">All types of heavy machinery requirements </p>
