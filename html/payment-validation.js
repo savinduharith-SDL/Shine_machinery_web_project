@@ -1,4 +1,5 @@
-  function paymentValidate(){  
+function paymentValidate() {  
+
     var fullname=document.paymentform.fullname.value;  
     var email=document.paymentform.email.value;
     var address=document.paymentform.address.value;
@@ -8,148 +9,82 @@
     var expdate=document.paymentform.expdate.value;
     var cvv=document.paymentform.cvv.value;
 
-
-    if(validateFullName(fullname)){
-      if(validateEmail(email)){
-        if(validateAddress(address)){
-          if(validateCardName(cardname)){ 
-            if(cardnumber(cardnumber)){
-              if(validateCVV(cvv)){          
-              } 
-            }
-          }  
-        }
-      }
-    }
-    //return false;
-  }
-
-  function validateFullName(fullname){ 
     var letters = /^[A-Za-z]+$/;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var alphanumeric = /^[0-9a-zA-Z]+$/;
+    var visacardnoformat = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    var mastercardnoformat = /^(?:5[1-5][0-9]{14})$/;
+    var cvvformat = /^[0-9]{3,4}$/;
 
     if (fullname == null || fullname == "") {
       alert('Please enter your full name');
+      document.paymentform.fullname.focus();
       return false
     }
-    else if(fullname.match(letters)){
-      return true;
-    }
-    else{
+    else if(!fullname.match(letters)){
       alert('Full name must have alphabet characters only');
       document.paymentform.fullname.focus();
       return false;
     }
-  }
 
-  function validateEmail(email){
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    if (email == null || email == "") {
+    else if (email == null || email == "") {
       alert('Please enter your email');
+      document.paymentform.email.focus();
       return false;
     }
-    else if(email.match(mailformat)){
-      return true;
-    }
-    else{
-      alert("You have entered an invalid email address!");
-      email.focus();
+    else if(!email.match(mailformat)){
+      alert("Invalid email address!");
+      document.paymentform.email.focus();
       return false;
     }
-  }
-
-  function validateAddress(address){ 
-    var letters = /^[0-9a-zA-Z]+$/;
-
-    if (address == null || address == "") {
+ 
+    else if (address == null || address == "") {
       alert('Please enter your address');
+      document.paymentform.address.focus();
       return false;
     }
-    if(address.match(letters)){
-      return true;
-    }
-    else{
-      alert('User address must have alphanumeric characters only');
-      address.focus();
+    else if(!address.match(letters)){
+      alert('Address must have numbers and letters only');
+      document.paymentform.address.focus();
       return false;
     }
-  }
 
-  function validateCardName(cardname){ 
     if (cardname == null || cardname == "") {
-      alert('Please enter the name on card');
+      alert('Please enter the name on your card');
+      document.paymentform.cardname.focus();
       return false;
     }
-    if(cardname.match(letters)){
-      return true;
-    }
-    else{
+    else if(!cardname.match(letters)) {
       alert('Name on card must have alphabet characters only');
-      cardname.focus();
+      document.paymentform.cardname.focus();
       return false;
     }
-  }
 
-  function cardnumber(cardnumber){
-    var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-
-    if (cardnumber == null || cardnumber == "") {
+    else if (cardnumber == null || cardnumber == "") {
       alert('Please enter your card number');
+      document.paymentform.cardnumber.focus();
       return false;
     }
-    if(cardnumber.match(cardno)){
-      return true;
-    }
-    else{
-      alert("Not a valid Visa credit card number!");
+    else if(!cardnumber.match(visacardnoformat) && !cardnumber.match(mastercardnoformat)){
+      alert("Invalid Visa or Master card card number!");
+      document.paymentform.cardnumber.focus();
       return false;
     }
-  }
 
-  function validateCVV(cvv) {
-    // Regex to check valid
-    // CVV_Number 
-    var regex = new RegExp(/^[0-9]{3,4}$/);
- 
-    // if CVV_Number
-    // is empty return false
-    if (cvv == null || cvv == "") {
-      alert("Please enter the cvv.")
+    else if (expdate == null || expdate == "") {
+      alert('Please enter expiry date');
+      document.paymentform.expdate.focus();
       return false;
     }
- 
-    // Return true if the CVV_Number
-    // matched the ReGex
-    if (regex.test(cvv) == false) {
+
+    else if(cvv == null || cvv == "") {
+      alert("Please enter the cvv")
+      document.paymentform.cvv.focus();
+      return false;
+    }
+    else if(!cvv.match(cvvformat)) {
       alert("Invalid cvv number")
+      document.paymentform.cvv.focus();
       return false;
     }
   }
-
-  /*if(type==0){
-    alert("Please select machine type.");
-    document.rentform.machine.focus();
-    return false;
-  }
-  else if(jobsite==null || jobsite==""){  
-    alert("Please enter your jobsite.");  
-    document.rentform.address.focus();
-    return false;  
-  }
-  else if(startdate==0){  
-    alert("Please choose the rental start date.");  
-    document.rentform.startdate.focus();
-    return false;  
-  }
-  else if(enddate==0){  
-    alert("Please choose the rental end date.");  
-    document.rentform.enddate.focus();
-    return false;  
-  }
-  else if(enddate<startdate){
-    alert("Please choose a correct end date.");
-    document.rentform.enddate.focus();
-    return false; 
-  }
-
-  window.location.href="payment.html";   */
