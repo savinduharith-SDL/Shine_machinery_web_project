@@ -24,39 +24,33 @@
           	
 
 	 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	 	$name = $_POST['signup_username'];
-	 	$email = $_POST['signup_email'];
-	 	$user_password = $_POST['signup_password'];
+	 	$name = $_POST['name'];
+	 	$email = $_POST['email'];
+	 	$phone = $_POST['phone'];
+	 	$msg = $_POST['msg'];
 
 	 
 	 }
-	  $sql="SELECT user_name FROM customer WHERE user_name='$name' LIMIT 1" ;
-	  $result=mysqli_query($conn, $sql);
-
-	  if(mysqli_num_rows($result) == 0){
 	  	
-	  	$insert = "INSERT INTO `customer` VALUES('$name','$email','$user_password')";
+	  	$insert = "INSERT INTO `contact_us` VALUES('$name','$email','$phone','$msg')";
 	  		if(mysqli_query($conn,$insert)){
-	  			echo "New record added sucessfully";
-	  			header("Location: /html/login.php");
-	  			exit();
-	  	}
-	  		else{
-	  			echo "error 404";
-	  		}
-}
-	  else{
-	  	//header("Location: /html/login.php");
-	  	echo "<script>
+	  			echo "<script>
 	  			function redirect(){
-	  				 window.alert('User already exsists!');
-	  				 location.href='/html/login.php';
+	  				 window.alert('We will contact you soon.!');
+	  				 location.href='/html/index.html';
 	  			} 
 	  			redirect();
 	  			</script>";
-	  		
-	  }
-	  
+	  	}
+	  		else{
+	  		echo "<script>
+	  			function redirect(){
+	  				 window.alert('error 404');
+	  				 location.href='/html/index.html';
+	  			} 
+	  			redirect();
+	  			</script>";
+	  		}
 
 ?>
 
