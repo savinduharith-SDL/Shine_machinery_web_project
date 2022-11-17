@@ -41,7 +41,7 @@ background-size: 100% 100%;
 </ul>
 
 <div id="login">
-<form class="form" method="POST" action="signin.php">
+<form class="form" method="post" action="signin.php">
 <p class="fieldset">
 <label class="image-replace username" for="signin-username" >Username</label>
 <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="Username" name="signin_username">

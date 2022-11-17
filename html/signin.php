@@ -5,8 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
-<body style="background-image: url("https://static.vecteezy.com/system/resources/previews/008/255/802/non_2x/page-not-found-error-404-system-updates-uploading-computing-operation-installation-programs-system-maintenance-graffiti-sprayed-page-not-found-error-404-isolated-on-white-background-vector.jpg");
-background-repeat: no-repeat;">
+<body>
 <?php 
 
 	 	$servername = "localhost";
